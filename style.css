@@ -1,0 +1,209 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* body {
+    background-image: url(./weathers/clear.jpg);
+    background-size: cover;
+} */
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110vh;
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    transition: opacity .8s ease; /* Smooth fade transition */
+    z-index: -1; /* Keeps background behind all other content */
+}
+.container {
+    width: 900px; /* Increased width */
+    background-color: rgb(255, 255, 255,0.5);
+    backdrop-filter: blur(2px);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Search Form */
+.weather__search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.weather__searchform {
+    width: 85%;
+    padding: 12px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    font-size: 1.1em;
+}
+
+.search-button {
+    padding: 12px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    color: black;
+    background-color: rgb(212, 212, 212,.7);
+}
+
+/* Main Weather Display */
+.weather__location {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.weather__location h2 {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.weather__datetime {
+    font-weight: bold;
+    font-size: 1em;
+    color: #000000;
+}
+
+.weather__icon img {
+    width: 120px;
+    height: 120px;
+}
+
+.weather__temperature {
+    font-size: 4.5em;
+    font-weight: bold;
+}
+
+.weather__forecast {
+    font-size: 3.3em;
+    color: #2e2e2e;
+    font-weight: bold;
+}
+
+/* Additional Weather Details */
+.weather-details {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to new rows */
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.weather-details div {
+    flex: 0 0 30%; /* Ensures three columns per row */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.weather-details div:hover {
+    background-color: #e8e8e8;
+}
+
+.weather__minmax p, .weather__realfeel, .weather__humidity, .weather__wind, .weather__pressure, .weather_visibility {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Hourly Forecast */
+.hourly-forecast {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    font-size: 1em;
+    color: #555;
+    font-weight: bold;
+}
+
+.hourly-forecast div {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+}
+
+.hourly-forecast div:hover {
+    background-color: #e8e8e8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .weather__temperature {
+        font-size: 3em;
+    }
+
+    .weather-details {
+        flex-direction: column;
+    }
+    #background{
+        height: 320vh;
+    }
+    .weather-details div, .hourly-forecast div {
+        margin: 5px 0;
+        flex: 0 0 100%; /* Full width on smaller screens */
+    }
+}
+/*loading screen css */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+   
+  .loading-content {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+  }
+   
+  .loading-icon {
+    width: 100px;
+    height: 100px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+  }
+   
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
