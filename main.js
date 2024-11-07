@@ -61,7 +61,7 @@ async function getWeather() {
 
     try {
 
-        const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${currCity}&units=metric&appid=${API_KEY}`);
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${currCity}&units=metric&appid=${API_KEY}`);
 
         if (!res.ok) {
             throw new Error(`Failed to fetch weather data: ${res.statusText}`);
