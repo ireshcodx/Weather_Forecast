@@ -1,5 +1,5 @@
 // state
-let currCity = "norway";
+let currCity = "Pune";
 let units = "metric";
 // console.log("YSH");
 let city = document.querySelector(".weather__searchform");
