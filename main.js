@@ -109,6 +109,8 @@ async function getWeather() {
             changeBackground('./weathers/smoky.jpeg');
         } else if (weatherf === "Rain") {
             changeBackground('./weathers/rain.jpg');
+        }else if (weatherf === "Snow") {
+            changeBackground('./weathers/snow.jpg');
         }
 
     } catch (error) {
